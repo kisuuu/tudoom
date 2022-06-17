@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tudoom/constants/constants.dart';
-import 'package:tudoom/registration%20screens/step_1.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../registration screens/step_1.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -17,297 +18,308 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: white,
-          ),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15,
-                ),
-                child: Column(
-                  children: [
-                    Form(
-                      key: formKey,
-                      child: Column(
-                        children: [
-                          // logo heading
-                          Text(
-                            "Login or Register",
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: loginHeaderText,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          //  logo sub heading
-                          RichText(
-                            textAlign: TextAlign.center,
-                            text: TextSpan(
-                              style: const TextStyle(
-                                fontSize: 14.0,
+      child: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: Scaffold(
+          backgroundColor: white,
+          // resizeToAvoidBottomInset: false,
+          body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("assets/images/shape.png"),
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.bottomCenter,
+            )),
+            child: Center(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Form(
+                        key: formKey,
+                        child: Column(
+                          children: [
+                            // login heading
+                            Text(
+                              "Login or Register",
+                              style: GoogleFonts.poppins(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w600,
                                 color: loginHeaderText,
                               ),
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: 'Enter Your ',
+                            ),
+
+                            SizedBox(
+                              height: 10,
+                            ),
+                            //  logo sub heading
+                            RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14.0,
+                                  color: loginHeaderText,
                                 ),
-                                TextSpan(
-                                  text: 'username ,Email or Phone\n',
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'Enter Your ',
+                                  ),
+                                  TextSpan(
+                                    text: 'username ,Email or Phone\n',
+                                    style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: 'and ',
+                                  ),
+                                  TextSpan(
+                                    text: 'Password',
+                                    style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            TextFormField(
+                              cursorColor: black,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return "username can't be empty";
+                                }
+                                return null;
+                              },
+                              controller: usernameController,
+                              keyboardType: TextInputType.text,
+                              decoration: InputDecoration(
+                                hintText: "email,phone or username",
+                                hintStyle: GoogleFonts.lato(
+                                  fontWeight: FontWeight.w600,
+                                  color: hintcolor,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      12,
+                                    ),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                    width: 1.5,
                                   ),
                                 ),
-                                TextSpan(
-                                  text: 'and ',
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      12,
+                                    ),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                    width: 1.5,
+                                  ),
                                 ),
-                                TextSpan(
-                                  text: 'Password',
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      12,
+                                    ),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            // password field
+                            TextFormField(
+                              cursorColor: black,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return "password can't be empty";
+                                }
+                                return null;
+                              },
+                              controller: passwordController,
+                              keyboardType: TextInputType.text,
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                hintText: "password",
+                                hintStyle: GoogleFonts.lato(
+                                  fontWeight: FontWeight.w600,
+                                  color: hintcolor,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      12,
+                                    ),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                    width: 1.5,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      12,
+                                    ),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                    width: 1.5,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      12,
+                                    ),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // remember and forgot pass
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                    height: 24.0,
+                                    width: 24.0,
+                                    child: Transform.scale(
+                                      scale: 0.8,
+                                      child: Checkbox(
+                                          checkColor: white,
+                                          fillColor: MaterialStateProperty.all(
+                                              greyColor),
+                                          value: isChecked,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(5.0),
+                                            ),
+                                          ),
+                                          onChanged: (value) {
+                                            setState(() => isChecked = value);
+                                          }),
+                                    )),
+                                SizedBox(width: 10.0),
+                                Transform.translate(
+                                  offset: Offset(
+                                    -10,
+                                    0,
+                                  ),
+                                  child: Text(
+                                    'remember me',
+                                    style: GoogleFonts.lato(
+                                      fontSize: 13,
+                                      color: loginHeaderText,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                Spacer(),
+                                Container(
+                                  alignment: Alignment.centerRight,
+                                  child: TextButton(
+                                    child: Text(
+                                      'forgot Password?',
+                                      style: GoogleFonts.lato(
+                                        fontSize: 13,
+                                        color: purple,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    onPressed: () {},
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          // username field
-                          TextFormField(
-                            cursorColor: black,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return "username can't be empty";
-                              }
-                              return null;
-                            },
-                            controller: usernameController,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              hintText: "email,phone or username",
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    15,
+                            // login button
+                            SizedBox(
+                              height: 50,
+                              width: double.infinity,
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                    loginButton,
                                   ),
-                                ),
-                                borderSide: BorderSide(
-                                  color: black,
-                                  width: 1,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    15,
-                                  ),
-                                ),
-                                borderSide: BorderSide(
-                                  color: black,
-                                  width: 1,
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    15,
-                                  ),
-                                ),
-                                borderSide: BorderSide(
-                                  color: black,
-                                  width: 1,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 25,
-                          ),
-                          // password field
-                          TextFormField(
-                            cursorColor: black,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return "password can't be empty";
-                              }
-                              return null;
-                            },
-                            controller: passwordController,
-                            keyboardType: TextInputType.text,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              hintText: "password",
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    15,
-                                  ),
-                                ),
-                                borderSide: BorderSide(
-                                  color: black,
-                                  width: 1,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    15,
-                                  ),
-                                ),
-                                borderSide: BorderSide(
-                                  color: black,
-                                  width: 1,
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    15,
-                                  ),
-                                ),
-                                borderSide: BorderSide(
-                                  color: black,
-                                  width: 1,
-                                ),
-                              ),
-                            ),
-                          ),
-                          // remember and forgot pass
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                  height: 24.0,
-                                  width: 24.0,
-                                  child: Transform.scale(
-                                    scale: 0.8,
-                                    child: Checkbox(
-                                        checkColor: white,
-                                        fillColor: MaterialStateProperty.all(
-                                            greyColor),
-                                        value: isChecked,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(5.0),
-                                          ),
-                                        ),
-                                        onChanged: (value) {
-                                          setState(() => isChecked = value);
-                                        }),
-                                  )),
-                              SizedBox(width: 10.0),
-                              Transform.translate(
-                                offset: Offset(
-                                  -10,
-                                  0,
-                                ),
-                                child: const Text(
-                                  'remember me',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: loginHeaderText,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-
-                              // const Text(
-                              //   'Remember me',
-                              //   style: TextStyle(
-                              //     fontSize: 10,
-                              //     color: loginHeaderText,
-                              //   ),
-                              // ),
-                              Spacer(),
-                              Container(
-                                alignment: Alignment.centerRight,
-                                child: TextButton(
-                                  child: const Text(
-                                    'Forgot Password?',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: purple,
+                                  shape: MaterialStateProperty.all(
+                                    const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(10),
+                                      ),
                                     ),
                                   ),
-                                  onPressed: () {},
-                                ),
-                              ),
-                            ],
-                          ),
-
-                          // login button
-                          SizedBox(
-                            height: 50,
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                  loginButton,
-                                ),
-                                shape: MaterialStateProperty.all(
-                                  const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(10),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              child: const Text(
-                                'Login',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: white,
-                                ),
-                              ),
-                              onPressed: () {
-                                if (formKey.currentState!.validate()) {
-                                  usernameController.text;
-                                  passwordController.text;
-                                }
-                              },
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          // register account
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "don't have and account ",
-                              ),
-                              InkWell(
-                                onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RegistrationStep1()),
                                 ),
                                 child: Text(
-                                  'Register?',
-                                  style: const TextStyle(
+                                  'login',
+                                  style: GoogleFonts.lato(
+                                    fontSize: 22,
                                     fontWeight: FontWeight.bold,
-                                    color: purple,
+                                    color: white,
                                   ),
                                 ),
+                                onPressed: () {
+                                  if (formKey.currentState!.validate()) {
+                                    usernameController.text;
+                                    passwordController.text;
+                                  }
+                                },
                               ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            SizedBox(
+                              height: 25,
+                            ),
+                            // register account
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("don't have and account ",
+                                    style: GoogleFonts.lato(
+                                      fontSize: 13,
+                                    )),
+                                InkWell(
+                                  onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const RegistrationStep1()),
+                                  ),
+                                  child: Text(
+                                    'Register?',
+                                    style: GoogleFonts.lato(
+                                      fontWeight: FontWeight.bold,
+                                      color: purple,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

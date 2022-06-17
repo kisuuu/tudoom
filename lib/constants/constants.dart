@@ -10,5 +10,7 @@ const purple = Color.fromARGB(255, 91, 66, 143);
 const creamWhite = Color.fromARGB(255, 252, 249, 245);
 const greyColor = Color.fromARGB(255, 79, 91, 91);
 const black = Color.fromARGB(255, 37, 48, 48);
+const stepsheading = Color.fromARGB(255, 58, 57, 57);
 const lightgrey = Color.fromRGBO(0, 0, 0, 0.25);
 const white = Colors.white;
+const hintcolor = Color.fromRGBO(0, 0, 0, 0.25);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tudoom/constants/constants.dart';
 import 'package:tudoom/registration%20screens/step2.dart';
 import 'package:tudoom/screens/login_screen.dart';
@@ -23,467 +24,491 @@ class _RegistrationStep1State extends State<RegistrationStep1> {
     return SafeArea(
       child: DefaultTabController(
         length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            leading: BackButton(color: black),
-            centerTitle: true,
+        child: GestureDetector(
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: Scaffold(
             backgroundColor: white,
-            title: Text(
-              'Steps 1/3',
-              style: TextStyle(
-                color: black,
+            appBar: AppBar(
+              elevation: 0,
+              leading: BackButton(color: black),
+              centerTitle: true,
+              backgroundColor: white,
+              title: Text(
+                'Steps 1/3',
+                style: GoogleFonts.poppins(
+                  color: stepsheading,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 50,
-                ),
-                Center(
-                  child: Text(
-                    "Verify it's you",
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: loginHeaderText,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "the number you mentioned recieves",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: loginHeaderText,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "a ",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: loginHeaderText,
+            body: Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage("assets/images/shape.png"),
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.bottomCenter,
+              )),
+              child: Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Text(
+                        "Verify it's you",
+                        style: GoogleFonts.poppins(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w600,
+                          color: loginHeaderText,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "verification code",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: loginHeaderText,
+                      SizedBox(
+                        height: 5,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  isSignupScreen = true;
-                                });
-                              },
-                              child: Column(
+                      Text(
+                        "the number you mentioned recieves",
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          color: loginHeaderText,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "a ",
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: loginHeaderText,
+                            ),
+                          ),
+                          Text(
+                            "verification code",
+                            style: GoogleFonts.poppins(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: loginHeaderText,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Center(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Text(
-                                    "Phone",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: isSignupScreen
-                                            ? purple
-                                            : greyColor),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        isSignupScreen = true;
+                                      });
+                                    },
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Phone",
+                                          style: GoogleFonts.lato(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: isSignupScreen
+                                                  ? purple
+                                                  : greyColor),
+                                        ),
+                                        if (isSignupScreen)
+                                          Container(
+                                            margin: EdgeInsets.only(top: 3),
+                                            height: 2,
+                                            width: 55,
+                                            color: purple,
+                                          )
+                                      ],
+                                    ),
                                   ),
-                                  if (isSignupScreen)
-                                    Container(
-                                      margin: EdgeInsets.only(top: 3),
-                                      height: 2,
-                                      width: 55,
-                                      color: purple,
-                                    )
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        isSignupScreen = false;
+                                      });
+                                    },
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Email",
+                                          style: GoogleFonts.lato(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: !isSignupScreen
+                                                  ? purple
+                                                  : greyColor),
+                                        ),
+                                        if (!isSignupScreen)
+                                          Container(
+                                            margin: EdgeInsets.only(top: 3),
+                                            height: 2,
+                                            width: 55,
+                                            color: purple,
+                                          )
+                                      ],
+                                    ),
+                                  )
                                 ],
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  isSignupScreen = false;
-                                });
-                              },
-                              child: Column(
+                              // for email otp
+                              if (!isSignupScreen)
+                                Form(
+                                  key: formKey,
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 30,
+                                      ),
+                                      TextFormField(
+                                          cursorColor: black,
+                                          validator: (value) {
+                                            if (value!.isEmpty) {
+                                              return "email can't be empty";
+                                            }
+                                            return null;
+                                          },
+                                          controller: emailController,
+                                          keyboardType:
+                                              TextInputType.emailAddress,
+                                          decoration: InputDecoration(
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                              horizontal: 10,
+                                              vertical: 18,
+                                            ),
+                                            hintText: 'enter your email',
+                                            hintStyle: GoogleFonts.poppins(
+                                              color: hintcolor,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            // hintText: "email,phone or username",
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                          )),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      TextFormField(
+                                          cursorColor: black,
+                                          validator: (value) {
+                                            if (value!.isEmpty) {
+                                              return "otp can't be empty";
+                                            }
+                                            return null;
+                                          },
+                                          controller: emailOtpController,
+                                          keyboardType: TextInputType.number,
+                                          decoration: InputDecoration(
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                              horizontal: 10,
+                                              vertical: 18,
+                                            ),
+                                            hintText: 'enter OTP',
+                                            hintStyle: GoogleFonts.poppins(
+                                              color: hintcolor,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            // hintText: "email,phone or username",
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                          )),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                              // phone number and otp
+                              if (isSignupScreen)
+                                Form(
+                                  key: formKey,
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 30,
+                                      ),
+                                      TextFormField(
+                                          cursorColor: black,
+                                          validator: (value) {
+                                            if (value!.isEmpty) {
+                                              return "phone number can't be empty";
+                                            }
+                                            return null;
+                                          },
+                                          controller: phoneNumberController,
+                                          keyboardType: TextInputType.text,
+                                          decoration: InputDecoration(
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                              horizontal: 10,
+                                              vertical: 18,
+                                            ),
+                                            hintText: 'enter your phone',
+                                            hintStyle: GoogleFonts.poppins(
+                                              color: hintcolor,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            // hintText: "email,phone or username",
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                          )),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      TextFormField(
+                                          cursorColor: black,
+                                          validator: (value) {
+                                            if (value!.isEmpty) {
+                                              return "otp can't be empty";
+                                            }
+                                            return null;
+                                          },
+                                          controller: phoneOtpController,
+                                          keyboardType: TextInputType.text,
+                                          decoration: InputDecoration(
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                              horizontal: 10,
+                                              vertical: 18,
+                                            ),
+                                            hintText: 'enter OTP',
+                                            hintStyle: GoogleFonts.poppins(
+                                              color: hintcolor,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            // hintText: "email,phone or username",
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  15,
+                                                ),
+                                              ),
+                                              borderSide: BorderSide(
+                                                color: borderColor,
+                                                width: 1,
+                                              ),
+                                            ),
+                                          )),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                              // continue button
+                              SizedBox(
+                                height: 50,
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                      loginButton,
+                                    ),
+                                    shape: MaterialStateProperty.all(
+                                      const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'continue',
+                                    style: GoogleFonts.lato(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      color: white,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (formKey.currentState!.validate()) {
+                                      phoneNumberController.text;
+                                      emailOtpController.text;
+                                      phoneOtpController.text;
+                                      emailController.text;
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const RegistrationStep2()),
+                                      );
+                                    } else {}
+                                  },
+                                ),
+                              ),
+
+                              SizedBox(
+                                height: 25,
+                              ),
+                              // already have and accout
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Email",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: !isSignupScreen
-                                            ? purple
-                                            : greyColor),
+                                    "already have and account ",
+                                    style: GoogleFonts.lato(
+                                      fontSize: 13,
+                                      color: borderColor,
+                                    ),
                                   ),
-                                  if (!isSignupScreen)
-                                    Container(
-                                      margin: EdgeInsets.only(top: 3),
-                                      height: 2,
-                                      width: 55,
-                                      color: purple,
-                                    )
+                                  InkWell(
+                                    onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginScreen()),
+                                    ),
+                                    child: Text(
+                                      'Login?',
+                                      style: GoogleFonts.lato(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                        color: purple,
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
-                            )
-                          ],
-                        ),
-                        // for email otp
-                        if (!isSignupScreen)
-                          Form(
-                            key: formKey,
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 30,
-                                ),
-                                TextFormField(
-                                    cursorColor: black,
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return "email can't be empty";
-                                      }
-                                      return null;
-                                    },
-                                    controller: emailController,
-                                    keyboardType: TextInputType.emailAddress,
-                                    decoration: InputDecoration(
-                                      contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 10,
-                                        vertical: 18,
-                                      ),
-                                      hintText: 'enter your email',
-                                      hintStyle: TextStyle(
-                                        color: lightgrey,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                      // hintText: "email,phone or username",
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: black,
-                                          width: 1,
-                                        ),
-                                      ),
-                                    )),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                TextFormField(
-                                    cursorColor: black,
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return "otp can't be empty";
-                                      }
-                                      return null;
-                                    },
-                                    controller: emailOtpController,
-                                    keyboardType: TextInputType.number,
-                                    decoration: InputDecoration(
-                                      contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 10,
-                                        vertical: 18,
-                                      ),
-                                      hintText: 'enter otp',
-                                      hintStyle: TextStyle(
-                                        color: lightgrey,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                      // hintText: "email,phone or username",
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: black,
-                                          width: 1,
-                                        ),
-                                      ),
-                                    )),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                              ],
-                            ),
-                          ),
-
-                        // phone number and otp
-                        if (isSignupScreen)
-                          Form(
-                            key: formKey,
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 30,
-                                ),
-                                TextFormField(
-                                    cursorColor: black,
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return "phone number can't be empty";
-                                      }
-                                      return null;
-                                    },
-                                    controller: phoneNumberController,
-                                    keyboardType: TextInputType.text,
-                                    decoration: InputDecoration(
-                                      contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 10,
-                                        vertical: 18,
-                                      ),
-                                      hintText: 'enter your phone',
-                                      hintStyle: TextStyle(
-                                        color: lightgrey,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                      // hintText: "email,phone or username",
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: black,
-                                          width: 1,
-                                        ),
-                                      ),
-                                    )),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                TextFormField(
-                                    cursorColor: black,
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return "otp can't be empty";
-                                      }
-                                      return null;
-                                    },
-                                    controller: phoneOtpController,
-                                    keyboardType: TextInputType.text,
-                                    decoration: InputDecoration(
-                                      contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 10,
-                                        vertical: 18,
-                                      ),
-                                      hintText: 'enter otp',
-                                      hintStyle: TextStyle(
-                                        color: lightgrey,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                      // hintText: "email,phone or username",
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: borderColor,
-                                          width: 1,
-                                        ),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                            15,
-                                          ),
-                                        ),
-                                        borderSide: BorderSide(
-                                          color: black,
-                                          width: 1,
-                                        ),
-                                      ),
-                                    )),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                              ],
-                            ),
-                          ),
-
-                        // continue button
-                        SizedBox(
-                          height: 50,
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                loginButton,
-                              ),
-                              shape: MaterialStateProperty.all(
-                                const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(10),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            child: const Text(
-                              'continue',
-                              style: TextStyle(
-                                fontSize: 23,
-                                // fontWeight: FontWeight.bold,
-                                color: white,
-                              ),
-                            ),
-                            onPressed: () {
-                              if (formKey.currentState!.validate()) {
-                                phoneNumberController.text;
-                                emailOtpController.text;
-                                phoneOtpController.text;
-                                emailController.text;
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RegistrationStep2()),
-                                );
-                              } else {}
-                            },
+                            ],
                           ),
                         ),
-
-                        SizedBox(
-                          height: 25,
-                        ),
-                        // already have and accout
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "already have and account ",
-                            ),
-                            InkWell(
-                              onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LoginScreen()),
-                              ),
-                              child: Text(
-                                'Login?',
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: purple,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
           ),
         ),
@@ -491,286 +516,3 @@ class _RegistrationStep1State extends State<RegistrationStep1> {
     );
   }
 }
-
-// Container buildEmailSection() {
-//   return Container(
-//     margin: EdgeInsets.only(top: 20),
-//     child: Column(
-//       children: [
-//         TextFormField(
-//             cursorColor: black,
-//             validator: (value) {
-//               if (value!.isEmpty) {
-//                 return "username can't be empty";
-//               }
-//               return null;
-//             },
-//             controller: controller,
-//             keyboardType: TextInputType.text,
-//             decoration: InputDecoration(
-//               hintText: hintText,
-//               hintStyle: TextStyle(
-//                 color: lightgrey,
-//               ),
-//               // hintText: "email,phone or username",
-//               border: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               enabledBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               focusedBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: black,
-//                   width: 1,
-//                 ),
-//               ),
-//             )),
-//         SizedBox(
-//           height: 20,
-//         ),
-//         TextFormField(
-//             cursorColor: black,
-//             validator: (value) {
-//               if (value!.isEmpty) {
-//                 return "username can't be empty";
-//               }
-//               return null;
-//             },
-//             controller: controller,
-//             keyboardType: TextInputType.text,
-//             decoration: InputDecoration(
-//               hintText: hintText,
-//               hintStyle: TextStyle(
-//                 color: lightgrey,
-//               ),
-//               // hintText: "email,phone or username",
-//               border: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               enabledBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               focusedBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: black,
-//                   width: 1,
-//                 ),
-//               ),
-//             )),
-//       ],
-//     ),
-//   );
-// }
-
-// Container buildPhoneSection() {
-//   return Container(
-//     margin: EdgeInsets.only(top: 20),
-//     child: Column(
-//       children: [
-//         TextFormField(
-//             cursorColor: black,
-//             validator: (value) {
-//               if (value!.isEmpty) {
-//                 return "username can't be empty";
-//               }
-//               return null;
-//             },
-//             controller: phoneNumberController,
-//             keyboardType: TextInputType.text,
-//             decoration: InputDecoration(
-//               hintText: hintText,
-//               hintStyle: TextStyle(
-//                 color: lightgrey,
-//               ),
-//               // hintText: "email,phone or username",
-//               border: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               enabledBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               focusedBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: black,
-//                   width: 1,
-//                 ),
-//               ),
-//             )),
-//         SizedBox(
-//           height: 20,
-//         ),
-//         TextFormField(
-//             cursorColor: black,
-//             validator: (value) {
-//               if (value!.isEmpty) {
-//                 return "username can't be empty";
-//               }
-//               return null;
-//             },
-//             controller: controller,
-//             keyboardType: TextInputType.text,
-//             decoration: InputDecoration(
-//               hintText: hintText,
-//               hintStyle: TextStyle(
-//                 color: lightgrey,
-//               ),
-//               // hintText: "email,phone or username",
-//               border: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               enabledBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: borderColor,
-//                   width: 1,
-//                 ),
-//               ),
-//               focusedBorder: OutlineInputBorder(
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(
-//                     15,
-//                   ),
-//                 ),
-//                 borderSide: BorderSide(
-//                   color: black,
-//                   width: 1,
-//                 ),
-//               ),
-//             )),
-//       ],
-//     ),
-//   );
-// }
-
-// Widget buildTextField(
-//   TextEditingController controller,
-//   String hintText,
-//   bool isEmail,
-// ) {
-//   return TextFormField(
-//       cursorColor: black,
-//       validator: (value) {
-//         if (value!.isEmpty) {
-//           return "username can't be empty";
-//         }
-//         return null;
-//       },
-//       controller: controller,
-//       keyboardType: TextInputType.text,
-//       decoration: InputDecoration(
-//         hintText: hintText,
-//         hintStyle: TextStyle(
-//           color: lightgrey,
-//         ),
-//         // hintText: "email,phone or username",
-//         border: OutlineInputBorder(
-//           borderRadius: BorderRadius.all(
-//             Radius.circular(
-//               15,
-//             ),
-//           ),
-//           borderSide: BorderSide(
-//             color: borderColor,
-//             width: 1,
-//           ),
-//         ),
-//         enabledBorder: OutlineInputBorder(
-//           borderRadius: BorderRadius.all(
-//             Radius.circular(
-//               15,
-//             ),
-//           ),
-//           borderSide: BorderSide(
-//             color: borderColor,
-//             width: 1,
-//           ),
-//         ),
-//         focusedBorder: OutlineInputBorder(
-//           borderRadius: BorderRadius.all(
-//             Radius.circular(
-//               15,
-//             ),
-//           ),
-//           borderSide: BorderSide(
-//             color: black,
-//             width: 1,
-//           ),
-//         ),
-//       ));
-// }
