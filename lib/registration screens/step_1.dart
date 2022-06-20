@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tudoom/constants/constants.dart';
 import 'package:tudoom/registration%20screens/step2.dart';
-import 'package:tudoom/screens/login_screen.dart';
+import 'package:tudoom/screens/login%20and%20forget%20pass%20screen/login_screen.dart';
 import 'package:tudoom/testing/testing2.dart';
 
 class RegistrationStep1 extends StatefulWidget {

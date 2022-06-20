@@ -14,3 +14,4 @@ const stepsheading = Color.fromARGB(255, 58, 57, 57);
 const lightgrey = Color.fromRGBO(0, 0, 0, 0.25);
 const white = Colors.white;
 const hintcolor = Color.fromRGBO(0, 0, 0, 0.25);
+const biocolor = Color.fromRGBO(88, 96, 116, 1);

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tudoom/constants/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../registration screens/step_1.dart';
+import 'package:tudoom/screens/login%20and%20forget%20pass%20screen/forget_password.dart';
+import '../../registration screens/step_1.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -45,6 +46,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         key: formKey,
                         child: Column(
                           children: [
+                            Image.asset(
+                              'assets/images/t.png',
+                              width: 300,
+                              height: 300,
+                            ),
                             // login heading
                             Text(
                               "Login or Register",
@@ -248,7 +254,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ForgetPasswordScreen()),
+                                      );
+                                    },
                                   ),
                                 ),
                               ],
