@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tudoom/screens/login%20and%20forget%20pass%20screen/login_screen.dart';
+import 'package:tudoom/screens/profile/common_profile.dart';
+import 'package:tudoom/screens/profile/profile_page.dart';
 
 void main() {
   runApp(const MyApp());

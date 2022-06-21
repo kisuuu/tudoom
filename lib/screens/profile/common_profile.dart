@@ -1,34 +1,82 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tudoom/constants/constants.dart';
+import 'package:tudoom/screens/user_photos.dart';
 
 class CommonProfilescreen extends StatefulWidget {
-  const CommonProfilescreen({Key? key}) : super(key: key);
-
   @override
-  State<CommonProfilescreen> createState() => _CommonProfilescreenState();
+  _CommonProfilescreenState createState() => _CommonProfilescreenState();
 }
 
 class _CommonProfilescreenState extends State<CommonProfilescreen> {
-  final double coverHeight = 230;
+  final double coverHeight = 200;
   final double profileHeight = 114;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          buildTop(),
-          buildUsername(),
-          buildBio(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: DefaultTabController(
+          length: 3,
+          child: NestedScrollView(
+            headerSliverBuilder: (context, _) {
+              return [
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    [
+                      buildTop(),
+                      buildUsername(),
+                      buildBio(),
+                    ],
+                  ),
+                ),
+              ];
+            },
+            body: Column(
+              children: <Widget>[
+                Material(
+                  color: Colors.white,
+                  child: TabBar(
+                    labelColor: purple,
+                    unselectedLabelColor: profiletabColor,
+                    indicatorWeight: 1,
+                    indicatorColor: purple,
+                    labelStyle: GoogleFonts.poppins(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                    tabs: [
+                      Tab(
+                        text: "Photos",
+                      ),
+                      Tab(
+                        text: "Videos",
+                      ),
+                      Tab(
+                        text: "Saved",
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: TabBarView(
+                    children: [
+                      UserPhotosScreen(),
+                      Text("data"),
+                      Text("data"),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
 
   Widget buildTop() {
-    final bottom = profileHeight / 2;
-    final top = coverHeight - profileHeight / 1.5;
+    final bottom = profileHeight / 3;
+    final top = coverHeight - profileHeight / 1.2;
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.center,
@@ -46,13 +94,27 @@ class _CommonProfilescreenState extends State<CommonProfilescreen> {
   }
 
   Widget buildCoverImage() => Container(
-        color: greyColor,
-        child: Image.asset(
-          'assets/images/bg_image.jpg',
-          width: double.infinity,
-          height: coverHeight,
-          fit: BoxFit.cover,
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+          child: Image(
+            image: AssetImage(
+              'assets/images/bg_image.jpg',
+            ),
+            width: double.infinity,
+            height: coverHeight,
+            fit: BoxFit.cover,
+          ),
         ),
+
+        // Image.asset(
+        //   'assets/images/bg_image.jpg',
+        // width: double.infinity,
+        // height: coverHeight,
+        // fit: BoxFit.cover,
+        // ),
       );
   Widget buildProfileImage() => Container(
         // radius: profileHeight / 1.85,
