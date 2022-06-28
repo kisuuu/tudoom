@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tudoom/constants/constants.dart';
+import 'package:tudoom/screens/profile/tudoom_profile.dart';
 import 'package:tudoom/screens/profile/user_photos.dart';
+import 'package:tudoom/screens/profile/user_video.dart';
 
 class CommonProfilescreen extends StatefulWidget {
   @override
@@ -61,7 +63,7 @@ class _CommonProfilescreenState extends State<CommonProfilescreen> {
                   child: TabBarView(
                     children: [
                       UserPhotosScreen(),
-                      Text("data"),
+                      UserVideoScreen(),
                       Text("data"),
                     ],
                   ),
@@ -237,7 +239,13 @@ class _CommonProfilescreenState extends State<CommonProfilescreen> {
                       ),
                       fixedSize: const Size(100, 50),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TudoomProfile()),
+                      );
+                    },
                     child: SizedBox(
                       child: Text(
                         "Tudoom profile",
