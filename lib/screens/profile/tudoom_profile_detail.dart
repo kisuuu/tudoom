@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tudoom/screens/profile/common_profile.dart';
+import 'package:tudoom/screens/profile/tudoom_profile.dart';
 
-class ProfileLabel extends StatelessWidget {
-  const ProfileLabel({Key? key}) : super(key: key);
+class TudoomProfileLabel extends StatelessWidget {
+  const TudoomProfileLabel({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class ProfileLabel extends StatelessWidget {
         headerSliverBuilder: (conetext, index) {
           return [
             SliverToBoxAdapter(
-              child: CommonProfilescreen(),
+              child: TudoomProfile(),
             ),
             // SliverPersistentHeader( pinned: true ,delegate: PersistentHeader(child: Text(""), mXExtend: 50, mnExtent: 50,  ),),
           ];
