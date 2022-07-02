@@ -15,4 +15,6 @@ const stepsheading = Color.fromARGB(255, 58, 57, 57);
 const lightgrey = Color.fromRGBO(0, 0, 0, 0.25);
 const white = Colors.white;
 const hintcolor = Color.fromRGBO(0, 0, 0, 0.25);
+const becometrader = Color.fromRGBO(0, 0, 0, 0.2);
+const becometraderdot = Color.fromRGBO(196, 196, 196, 1);
 const biocolor = Color.fromRGBO(88, 96, 116, 1);
