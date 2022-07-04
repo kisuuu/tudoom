@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tudoom/screens/reffrals/my_reffrals.dart';
 import 'package:tudoom/screens/reffrals/reffer.dart';
+import 'package:tudoom/screens/stars%20and%20badges/completed_screen.dart';
 
 import '../../constants/constants.dart';
 
-class ReffralsScreen extends StatefulWidget {
-  ReffralsScreen({Key? key}) : super(key: key);
+class StarAndBadgesScreen extends StatefulWidget {
+  StarAndBadgesScreen({Key? key}) : super(key: key);
 
   @override
-  State<ReffralsScreen> createState() => _ReffralsScreenState();
+  State<StarAndBadgesScreen> createState() => _StarAndBadgesScreenState();
 }
 
-class _ReffralsScreenState extends State<ReffralsScreen> {
+class _StarAndBadgesScreenState extends State<StarAndBadgesScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -26,7 +27,7 @@ class _ReffralsScreenState extends State<ReffralsScreen> {
           centerTitle: true,
           backgroundColor: purple,
           title: Text(
-            'Reffrals',
+            'Stars and Badg es',
             style: GoogleFonts.poppins(
               color: white,
               fontSize: 24,
@@ -65,20 +66,23 @@ class _ReffralsScreenState extends State<ReffralsScreen> {
                   ),
                   tabs: [
                     Tab(
-                      text: 'Reffer',
+                      text: 'Completed',
                       height: 60,
                     ),
                     Tab(
-                      text: 'My Reffrals',
+                      text: 'Progress',
                       height: 60,
                     ),
                   ],
                 ),
                 Container(
+                  color: Colors.amber,
                   height: MediaQuery.of(context).size.height * 0.82,
                   child: TabBarView(children: [
-                    Reffer(),
-                    MyReffralsScreen(),
+                    CompletedScreen(),
+                    Center(
+                      child: Text('data'),
+                    ),
                   ]),
                 )
               ],

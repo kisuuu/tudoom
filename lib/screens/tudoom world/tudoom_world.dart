@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:tudoom/screens/reffrals/reffrals_screen.dart';
+import 'package:tudoom/screens/stars%20and%20badges/star_and_badges.dart';
 
 import '../../constants/constants.dart';
 
@@ -142,9 +144,12 @@ class TudoomWorldScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TudoomWorldServices(
-                          icon: Icons.share,
-                          text: 'Reffeals',
+                        InkWell(
+                          onTap: () => ReffralsScreen(),
+                          child: TudoomWorldServices(
+                            icon: Icons.share,
+                            text: 'Reffeals',
+                          ),
                         ),
                         TudoomWorldServices(
                           icon: Icons.upload,
@@ -154,9 +159,12 @@ class TudoomWorldScreen extends StatelessWidget {
                           icon: Icons.local_grocery_store,
                           text: 'Store',
                         ),
-                        TudoomWorldServices(
-                          icon: Icons.star,
-                          text: 'Badges',
+                        InkWell(
+                          onTap: () => StarAndBadgesScreen(),
+                          child: TudoomWorldServices(
+                            icon: Icons.star,
+                            text: 'Badges',
+                          ),
                         ),
                       ],
                     ),

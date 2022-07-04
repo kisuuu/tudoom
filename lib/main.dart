@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tudoom/screens/add%20credit/add_credit.dart';
 import 'package:tudoom/screens/become%20trader/Become_Trader.dart';
 import 'package:tudoom/screens/login%20and%20forget%20pass%20screen/login_screen.dart';
+import 'package:tudoom/screens/new%20post/new_post.dart';
 import 'package:tudoom/screens/profile/common_profile.dart';
 import 'package:tudoom/screens/profile/profile_page.dart';
 import 'package:tudoom/screens/profile/tudoom_profile.dart';
 import 'package:tudoom/screens/reffrals/reffrals_screen.dart';
+import 'package:tudoom/screens/stars%20and%20badges/star_and_badges.dart';
 import 'package:tudoom/screens/tudoom%20world/tudoom_world.dart';
 
 void main() {
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ReffralsScreen(),
+      home: NewPostScreen(),
     );
   }
 }
