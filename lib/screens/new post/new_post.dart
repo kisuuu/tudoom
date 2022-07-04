@@ -73,24 +73,11 @@ class NewPostScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Destination',
-                      textAlign: TextAlign.left,
-                      style: GoogleFonts.lato(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Color.fromRGBO(0, 0, 0, 0.7),
-                      ),
+                    NewPostLabel(
+                      text: 'Destination',
                     ),
-                    TextFormField(
+                    NewPostTextField(
                       controller: destination,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "password can't be empty";
-                        }
-                        return null;
-                      },
-                      keyboardType: TextInputType.text,
                     ),
                     SizedBox(
                       height: 50,
@@ -138,6 +125,51 @@ class NewPostScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class NewPostTextField extends StatelessWidget {
+  NewPostTextField({
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
+
+  TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return "password can't be empty";
+        }
+        return null;
+      },
+      keyboardType: TextInputType.text,
+    );
+  }
+}
+
+class NewPostLabel extends StatelessWidget {
+  String text;
+  NewPostLabel({
+    required this.text,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      // 'Destination',
+      text,
+      textAlign: TextAlign.left,
+      style: GoogleFonts.lato(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: Color.fromRGBO(0, 0, 0, 0.7),
       ),
     );
   }
