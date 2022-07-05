@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tudoom/screens/reffrals/my_reffrals.dart';
 import 'package:tudoom/screens/reffrals/reffer.dart';
 import 'package:tudoom/screens/stars%20and%20badges/completed_screen.dart';
+import 'package:tudoom/screens/stars%20and%20badges/progress.dart';
 
 import '../../constants/constants.dart';
 
@@ -80,9 +81,7 @@ class _StarAndBadgesScreenState extends State<StarAndBadgesScreen> {
                   height: MediaQuery.of(context).size.height * 0.82,
                   child: TabBarView(children: [
                     CompletedScreen(),
-                    Center(
-                      child: Text('data'),
-                    ),
+                    ProgressScreen(),
                   ]),
                 )
               ],

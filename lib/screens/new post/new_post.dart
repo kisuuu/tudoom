@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constants/constants.dart';
 
-class NewPostScreen extends StatelessWidget {
+class NewPostScreen extends StatefulWidget {
   NewPostScreen({Key? key}) : super(key: key);
+
+  @override
+  State<NewPostScreen> createState() => _NewPostScreenState();
+}
+
+class _NewPostScreenState extends State<NewPostScreen> {
   final newpostkey = GlobalKey<FormState>();
+  bool status = false;
   TextEditingController destination = TextEditingController();
 
   @override
@@ -80,7 +88,89 @@ class NewPostScreen extends StatelessWidget {
                       controller: destination,
                     ),
                     SizedBox(
-                      height: 50,
+                      height: 15,
+                    ),
+                    NewPostLabel(
+                      text: 'Tag people',
+                    ),
+                    NewPostTextField(
+                      controller: destination,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    NewPostLabel(
+                      text: 'Add location',
+                    ),
+                    NewPostTextField(
+                      controller: destination,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    NewPostLabel(
+                      text: 'Add Music',
+                    ),
+                    NewPostTextField(
+                      controller: destination,
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "Public",
+                            style: GoogleFonts.lato(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Color.fromRGBO(0, 0, 0, 0.7),
+                            ),
+                          ),
+                        ),
+                        FlutterSwitch(
+                          width: 45.0,
+                          height: 20.0,
+                          // valueFontSize: 12.0,
+                          toggleSize: 12.0,
+                          toggleColor: black,
+                          activeToggleColor: white,
+                          activeColor: Colors.grey,
+                          value: status,
+                          onToggle: (val) {
+                            setState(() {
+                              status = val;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Advance setting',
+                          style: GoogleFonts.lato(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Color.fromRGBO(0, 0, 0, 0.7),
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: black,
+                          size: 15,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30,
                     ),
                     SizedBox(
                       height: 50,
@@ -141,6 +231,9 @@ class NewPostTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+      ),
       controller: controller,
       validator: (value) {
         if (value!.isEmpty) {
