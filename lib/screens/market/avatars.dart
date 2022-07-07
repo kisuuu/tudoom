@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-
-import '../../constants/constants.dart';
 
 class AvatarsScreen extends StatelessWidget {
   const AvatarsScreen({Key? key}) : super(key: key);
@@ -17,7 +14,7 @@ class AvatarsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Text(
@@ -29,12 +26,14 @@ class AvatarsScreen extends StatelessWidget {
             ),
             Expanded(
               child: GridView.count(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 // mainAxisSpacing: 10,
                 crossAxisSpacing: 15,
                 // shrinkWrap: true,
                 childAspectRatio: (0.55),
                 shrinkWrap: true,
+
+                crossAxisCount: 4,
                 children: [
                   Badges(
                     image: 'assets/images/avatar1.png',
@@ -97,8 +96,6 @@ class AvatarsScreen extends StatelessWidget {
                     price: '\$0.1',
                   ),
                 ],
-
-                crossAxisCount: 4,
               ),
             ),
           ],
@@ -132,7 +129,7 @@ class Badges extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Color.fromRGBO(243, 171, 167, 1),
+              color: const Color.fromRGBO(243, 171, 167, 1),
             ),
             height: 70,
             width: 70,
@@ -141,7 +138,7 @@ class Badges extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(

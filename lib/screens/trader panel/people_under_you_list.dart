@@ -42,7 +42,7 @@ class _PeopleUnderYouListScreenState extends State<PeopleUnderYouListScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: BackButton(color: white),
+        leading: const BackButton(color: white),
         centerTitle: true,
         backgroundColor: purple,
         title: Text(
@@ -57,7 +57,7 @@ class _PeopleUnderYouListScreenState extends State<PeopleUnderYouListScreen> {
       body: Container(
         color: purple,
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
@@ -70,7 +70,7 @@ class _PeopleUnderYouListScreenState extends State<PeopleUnderYouListScreen> {
           ),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
@@ -87,7 +87,7 @@ class _PeopleUnderYouListScreenState extends State<PeopleUnderYouListScreen> {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    Icon(
+                    const Icon(
                       // Icons.arrow_right_alt_rounded,
                       CupertinoIcons.arrow_right,
                       size: 28,
@@ -95,7 +95,7 @@ class _PeopleUnderYouListScreenState extends State<PeopleUnderYouListScreen> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Expanded(

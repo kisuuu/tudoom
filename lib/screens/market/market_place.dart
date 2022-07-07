@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tudoom/screens/market/avatars.dart';
-import 'package:tudoom/screens/reffrals/my_reffrals.dart';
-import 'package:tudoom/screens/reffrals/reffer.dart';
 
 import '../../constants/constants.dart';
 
 class MarketPlaceScreen extends StatefulWidget {
-  MarketPlaceScreen({Key? key}) : super(key: key);
+  const MarketPlaceScreen({Key? key}) : super(key: key);
 
   @override
   State<MarketPlaceScreen> createState() => _MarketPlaceScreenState();
@@ -51,7 +49,7 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen> {
             ),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Padding(
@@ -64,13 +62,13 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen> {
                       border: Border.all(
                         color: becometrader,
                       ),
-                      borderRadius: BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(15),
                       ),
                     ),
                     child: Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                           flex: 1,
                           child: Icon(
                             Icons.warning,
@@ -97,7 +95,7 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen> {
                   children: [
                     Container(
                       // height: 45,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
                             color: becometrader,
@@ -116,7 +114,7 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen> {
                           // color: purple,
                           fontWeight: FontWeight.w600,
                         ),
-                        tabs: [
+                        tabs: const [
                           Tab(
                             text: 'stickers',
                           ),
@@ -134,7 +132,7 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen> {
                     ),
                   ],
                 ),
-                Expanded(
+                const Expanded(
                   child: TabBarView(
                     children: [
                       Center(
