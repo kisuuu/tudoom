@@ -17,7 +17,7 @@ class BecomeTraderScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: purple,
         title: Text(
-          'Tudoom World',
+          'Become Trader',
           style: GoogleFonts.poppins(
             color: white,
             fontSize: 18,
@@ -58,7 +58,7 @@ class BecomeTraderScreen extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(
                           15,
                         ),
@@ -69,7 +69,7 @@ class BecomeTraderScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Padding(
@@ -79,7 +79,7 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Spacer(),
+                              const Spacer(),
                               Center(
                                 child: Text(
                                   'Headmentor  ',
@@ -92,32 +92,32 @@ class BecomeTraderScreen extends StatelessWidget {
                               Container(
                                 width: 9,
                                 height: 9,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Color.fromRGBO(165, 62, 246, 1),
                                 ),
                               ),
-                              Spacer(),
-                              Icon(
+                              const Spacer(),
+                              const Icon(
                                 Icons.info_outline,
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
-                        Divider(
+                        const Divider(
                           thickness: 2,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 25,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Row(
@@ -126,7 +126,7 @@ class BecomeTraderScreen extends StatelessWidget {
                                 Container(
                                   width: 11,
                                   height: 11,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: becometraderdot,
                                   ),
@@ -146,10 +146,10 @@ class BecomeTraderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
-                            Divider(
+                            const Divider(
                               color: becometrader,
                               thickness: 1,
                               indent: 40,
@@ -161,7 +161,7 @@ class BecomeTraderScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Row(
@@ -170,7 +170,7 @@ class BecomeTraderScreen extends StatelessWidget {
                                 Container(
                                   width: 11,
                                   height: 11,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: becometraderdot,
                                   ),
@@ -190,10 +190,10 @@ class BecomeTraderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
-                            Divider(
+                            const Divider(
                               color: becometrader,
                               thickness: 1,
                               indent: 40,
@@ -205,7 +205,7 @@ class BecomeTraderScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Row(
@@ -214,7 +214,7 @@ class BecomeTraderScreen extends StatelessWidget {
                                 Container(
                                   width: 11,
                                   height: 11,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: becometraderdot,
                                   ),
@@ -232,11 +232,11 @@ class BecomeTraderScreen extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 15,
                                 ),
                                 Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.all(
                                       Radius.circular(
                                         25,
@@ -260,10 +260,10 @@ class BecomeTraderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
-                            Divider(
+                            const Divider(
                               color: becometrader,
                               thickness: 1,
                               indent: 40,
@@ -271,7 +271,7 @@ class BecomeTraderScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 25,
                         ),
                         Padding(
@@ -281,12 +281,12 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.check,
                                 size: 28,
                                 color: Colors.green,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -307,12 +307,12 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.check,
                                 size: 28,
                                 color: Colors.green,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -333,12 +333,12 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.check,
                                 size: 28,
                                 color: Colors.green,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -352,7 +352,7 @@ class BecomeTraderScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 25,
                         ),
                         SizedBox(
@@ -380,18 +380,18 @@ class BecomeTraderScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 35,
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(
                           15,
                         ),
@@ -402,7 +402,7 @@ class BecomeTraderScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Padding(
@@ -412,7 +412,7 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Spacer(),
+                              const Spacer(),
                               Center(
                                 child: Text(
                                   'Mentor  ',
@@ -425,32 +425,32 @@ class BecomeTraderScreen extends StatelessWidget {
                               Container(
                                 width: 9,
                                 height: 9,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Color.fromRGBO(254, 126, 109, 1),
                                 ),
                               ),
-                              Spacer(),
-                              Icon(
+                              const Spacer(),
+                              const Icon(
                                 Icons.info_outline,
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
-                        Divider(
+                        const Divider(
                           thickness: 2,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 25,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Row(
@@ -459,7 +459,7 @@ class BecomeTraderScreen extends StatelessWidget {
                                 Container(
                                   width: 11,
                                   height: 11,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: becometraderdot,
                                   ),
@@ -479,10 +479,10 @@ class BecomeTraderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
-                            Divider(
+                            const Divider(
                               color: becometrader,
                               thickness: 1,
                               indent: 40,
@@ -494,7 +494,7 @@ class BecomeTraderScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Row(
@@ -503,7 +503,7 @@ class BecomeTraderScreen extends StatelessWidget {
                                 Container(
                                   width: 11,
                                   height: 11,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: becometraderdot,
                                   ),
@@ -523,10 +523,10 @@ class BecomeTraderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
-                            Divider(
+                            const Divider(
                               color: becometrader,
                               thickness: 1,
                               indent: 40,
@@ -538,7 +538,7 @@ class BecomeTraderScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Row(
@@ -547,7 +547,7 @@ class BecomeTraderScreen extends StatelessWidget {
                                 Container(
                                   width: 11,
                                   height: 11,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: becometraderdot,
                                   ),
@@ -565,11 +565,11 @@ class BecomeTraderScreen extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 15,
                                 ),
                                 Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.all(
                                       Radius.circular(
                                         25,
@@ -593,10 +593,10 @@ class BecomeTraderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
-                            Divider(
+                            const Divider(
                               color: becometrader,
                               thickness: 1,
                               indent: 40,
@@ -604,7 +604,7 @@ class BecomeTraderScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 25,
                         ),
                         Padding(
@@ -614,12 +614,12 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.check,
                                 size: 28,
                                 color: Colors.green,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -640,12 +640,12 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.check,
                                 size: 28,
                                 color: Colors.green,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -666,12 +666,12 @@ class BecomeTraderScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.check,
                                 size: 28,
                                 color: Colors.green,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Text(
@@ -685,7 +685,7 @@ class BecomeTraderScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 25,
                         ),
                         SizedBox(
@@ -713,7 +713,7 @@ class BecomeTraderScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                       ],

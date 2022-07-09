@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tudoom/screens/notification/notification.dart';
+import 'package:tudoom/screens/Taccount/t_account.dart';
+import 'package:tudoom/screens/login%20and%20forget%20pass%20screen/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const NotificationScreen(),
+      home: const TAccountScreen(),
     );
   }
 }

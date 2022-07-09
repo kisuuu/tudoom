@@ -1,13 +1,7 @@
-import 'package:emojis/emoji.dart';
-import 'package:emojis/emojis.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'package:tudoom/constants/constants.dart';
-import 'package:tudoom/screens/profile/tudoom_avatar.dart';
 import 'package:tudoom/screens/trader%20panel/people_under_you_list.dart';
 
 class TraderPanel extends StatefulWidget {
@@ -46,7 +40,7 @@ class _TraderPanelState extends State<TraderPanel> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: BackButton(color: white),
+        leading: const BackButton(color: white),
         centerTitle: true,
         backgroundColor: purple,
         title: Text(
@@ -57,9 +51,9 @@ class _TraderPanelState extends State<TraderPanel> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 8.0),
+            padding: EdgeInsets.only(right: 8.0),
             child: Icon(
               Icons.more_vert,
               size: 30,
@@ -70,7 +64,7 @@ class _TraderPanelState extends State<TraderPanel> {
       body: Container(
         color: purple,
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
@@ -83,7 +77,7 @@ class _TraderPanelState extends State<TraderPanel> {
           ),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
@@ -102,7 +96,7 @@ class _TraderPanelState extends State<TraderPanel> {
                     //     15,
                     //   ),
                     // ),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Color.fromRGBO(
                           91,
@@ -117,7 +111,7 @@ class _TraderPanelState extends State<TraderPanel> {
                   child: Stack(
                     children: [
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(
                               15,
@@ -157,7 +151,7 @@ class _TraderPanelState extends State<TraderPanel> {
                         child: Container(
                           width: 60,
                           height: 60,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: circlecolor,
                           ),
@@ -169,7 +163,7 @@ class _TraderPanelState extends State<TraderPanel> {
                         child: Container(
                           width: 12,
                           height: 12,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: circlecolor,
                           ),
@@ -181,7 +175,7 @@ class _TraderPanelState extends State<TraderPanel> {
                         child: Container(
                           width: 60,
                           height: 60,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: circlecolor,
                           ),
@@ -193,7 +187,7 @@ class _TraderPanelState extends State<TraderPanel> {
                         child: Container(
                           width: 12,
                           height: 12,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: circlecolor,
                           ),
@@ -205,7 +199,7 @@ class _TraderPanelState extends State<TraderPanel> {
                         child: Container(
                           width: 12,
                           height: 12,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: circlecolor,
                           ),
@@ -215,13 +209,13 @@ class _TraderPanelState extends State<TraderPanel> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PeopleUnderYouListScreen()));
+                      builder: (context) => const PeopleUnderYouListScreen()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -237,7 +231,7 @@ class _TraderPanelState extends State<TraderPanel> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         // Icons.arrow_right_alt_rounded,
                         CupertinoIcons.arrow_right,
                         size: 28,
@@ -246,7 +240,7 @@ class _TraderPanelState extends State<TraderPanel> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Expanded(

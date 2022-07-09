@@ -16,7 +16,7 @@ class CompletedScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Card(
@@ -25,7 +25,7 @@ class CompletedScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromRGBO(0, 169, 146, 0.14),
                   borderRadius: BorderRadius.all(
                     Radius.circular(
@@ -35,7 +35,7 @@ class CompletedScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Row(
@@ -51,7 +51,7 @@ class CompletedScreen extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Column(
@@ -76,7 +76,7 @@ class CompletedScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Padding(
@@ -107,31 +107,36 @@ class CompletedScreen extends StatelessWidget {
                             Color.fromRGBO(255, 155, 48, 1),
                           ],
                         ),
-                        backgroundColor: Color.fromRGBO(217, 217, 217, 1),
+                        backgroundColor: const Color.fromRGBO(217, 217, 217, 1),
                         barRadius: const Radius.circular(10),
                         percent: .5,
                         animation: true,
                         animationDuration: 1000,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
               child: GridView.count(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
                 // shrinkWrap: true,
-                childAspectRatio: (0.9),
+                childAspectRatio: (0.8),
                 shrinkWrap: true,
+                // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                //     crossAxisCount: 2,
+                //     mainAxisSpacing: 10,
+                //     crossAxisSpacing: 10),
+                crossAxisCount: 2,
                 children: [
                   Container(
                     decoration: BoxDecoration(
@@ -370,11 +375,6 @@ class CompletedScreen extends StatelessWidget {
                     ),
                   ),
                 ],
-                // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                //     crossAxisCount: 2,
-                //     mainAxisSpacing: 10,
-                //     crossAxisSpacing: 10),
-                crossAxisCount: 2,
               ),
             ),
           ],

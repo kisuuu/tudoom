@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../constants/constants.dart';
 
 class NewPostScreen extends StatefulWidget {
-  NewPostScreen({Key? key}) : super(key: key);
+  const NewPostScreen({Key? key}) : super(key: key);
 
   @override
   State<NewPostScreen> createState() => _NewPostScreenState();
@@ -20,8 +20,9 @@ class _NewPostScreenState extends State<NewPostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: Container(
-          decoration: BoxDecoration(boxShadow: [
+          decoration: const BoxDecoration(boxShadow: [
             BoxShadow(
               color: black,
               offset: Offset(0, 0.5),
@@ -29,7 +30,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
           ]),
           child: AppBar(
             elevation: 0,
-            leading: BackButton(
+            leading: const BackButton(
               color: black,
             ),
             backgroundColor: white,
@@ -43,13 +44,12 @@ class _NewPostScreenState extends State<NewPostScreen> {
             ),
           ),
         ),
-        preferredSize: Size.fromHeight(kToolbarHeight),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Center(
@@ -67,7 +67,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           SingleChildScrollView(
@@ -87,7 +87,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                     NewPostTextField(
                       controller: destination,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     NewPostLabel(
@@ -96,7 +96,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                     NewPostTextField(
                       controller: destination,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     NewPostLabel(
@@ -105,7 +105,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                     NewPostTextField(
                       controller: destination,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     NewPostLabel(
@@ -114,8 +114,8 @@ class _NewPostScreenState extends State<NewPostScreen> {
                     NewPostTextField(
                       controller: destination,
                     ),
-                    SizedBox(
-                      height: 25,
+                    const SizedBox(
+                      height: 30,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,7 +127,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                             style: GoogleFonts.lato(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color.fromRGBO(0, 0, 0, 0.7),
+                              color: const Color.fromRGBO(0, 0, 0, 0.7),
                             ),
                           ),
                         ),
@@ -148,8 +148,8 @@ class _NewPostScreenState extends State<NewPostScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 25,
+                    const SizedBox(
+                      height: 30,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,17 +159,17 @@ class _NewPostScreenState extends State<NewPostScreen> {
                           style: GoogleFonts.lato(
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
-                            color: Color.fromRGBO(0, 0, 0, 0.7),
+                            color: const Color.fromRGBO(0, 0, 0, 0.7),
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.arrow_forward_ios,
                           color: black,
                           size: 15,
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     SizedBox(
@@ -178,7 +178,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                            loginButton,
+                            purple,
                           ),
                           shape: MaterialStateProperty.all(
                             const RoundedRectangleBorder(
@@ -189,7 +189,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                           ),
                         ),
                         child: Text(
-                          'login',
+                          'Post',
                           style: GoogleFonts.lato(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -231,7 +231,7 @@ class NewPostTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 8.0),
       ),
       controller: controller,
@@ -262,7 +262,7 @@ class NewPostLabel extends StatelessWidget {
       style: GoogleFonts.lato(
         fontSize: 16,
         fontWeight: FontWeight.w600,
-        color: Color.fromRGBO(0, 0, 0, 0.7),
+        color: const Color.fromRGBO(0, 0, 0, 0.7),
       ),
     );
   }

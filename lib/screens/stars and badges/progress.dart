@@ -16,57 +16,57 @@ class ProgressScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Expanded(
               child: GridView.count(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
                 // shrinkWrap: true,
-                childAspectRatio: (0.83),
+                childAspectRatio: (0.75),
                 shrinkWrap: true,
+
+                crossAxisCount: 2,
                 children: [
                   Badges(
-                    color: Color.fromRGBO(69, 126, 242, 0.36),
+                    color: const Color.fromRGBO(69, 126, 242, 0.36),
                     image: 'assets/images/Master_Collector.png',
                     subtitle: 'Reach for stars',
                     task: 'Task 1/5',
                   ),
                   Badges(
-                    color: Color.fromRGBO(69, 126, 242, 0.36),
+                    color: const Color.fromRGBO(69, 126, 242, 0.36),
                     image: 'assets/images/Collectionist.png',
                     subtitle: 'Reach for stars',
                     task: 'Task 3/5',
                   ),
                   Badges(
-                    color: Color.fromRGBO(69, 126, 242, 0.36),
+                    color: const Color.fromRGBO(69, 126, 242, 0.36),
                     image: 'assets/images/Reach_for_the_Stars_1.png',
                     subtitle: 'Reach for stars',
                     task: '',
                   ),
                   Badges(
-                    color: Color.fromRGBO(52, 64, 68, 0.36),
+                    color: const Color.fromRGBO(52, 64, 68, 0.36),
                     image: 'assets/images/Ceiling_Breaker_1.png',
                     subtitle: 'Celling Breaker',
                     task: '',
                   ),
                   Badges(
-                    color: Color.fromRGBO(91, 66, 143, 0.21),
+                    color: const Color.fromRGBO(91, 66, 143, 0.21),
                     image: 'assets/images/People_Person_Tier.png',
                     subtitle: "People's Person",
                     task: '',
                   ),
                   Badges(
-                    color: Color.fromRGBO(91, 66, 143, 0.21),
+                    color: const Color.fromRGBO(91, 66, 143, 0.21),
                     image: 'assets/images/Market_Spelunker_1.png',
                     subtitle: 'Market Spelunker',
                     task: '',
                   ),
                 ],
-
-                crossAxisCount: 2,
               ),
             ),
           ],
@@ -109,7 +109,7 @@ class Badges extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Image.asset(
@@ -118,7 +118,7 @@ class Badges extends StatelessWidget {
               width: 70,
               height: 70,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Text(
@@ -130,7 +130,7 @@ class Badges extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             LinearPercentIndicator(
@@ -147,7 +147,7 @@ class Badges extends StatelessWidget {
               animation: true,
               animationDuration: 1000,
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Text(

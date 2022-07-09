@@ -9,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:tudoom/constants/constants.dart';
 import 'package:tudoom/screens/profile/tudoom_avatar.dart';
+import 'package:tudoom/screens/tudoom%20world/tudoom_world.dart';
 
 class TudoomProfile extends StatefulWidget {
   const TudoomProfile({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: BackButton(color: white),
+        leading: const BackButton(color: white),
         centerTitle: true,
         backgroundColor: purple,
         title: Text(
@@ -66,11 +67,19 @@ class _TudoomProfileState extends State<TudoomProfile> {
           ),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(
-              Icons.more_vert,
-              size: 30,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TudoomWorldScreen()),
+              );
+            },
+            child: const Padding(
+              padding: EdgeInsets.only(right: 8.0),
+              child: Icon(
+                Icons.more_vert,
+                size: 30,
+              ),
             ),
           ),
         ],
@@ -86,7 +95,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                     Container(
                       color: purple,
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: white,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(
@@ -243,7 +252,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                                   ],
                                 ),
                                 backgroundColor:
-                                    Color.fromRGBO(217, 217, 217, 1),
+                                    const Color.fromRGBO(217, 217, 217, 1),
                                 barRadius: const Radius.circular(10),
                                 percent: .5,
                                 animation: true,
@@ -256,7 +265,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                               SizedBox(
                                 height: 50,
                                 child: ListView.builder(
-                                  physics: BouncingScrollPhysics(),
+                                  physics: const BouncingScrollPhysics(),
                                   scrollDirection: Axis.horizontal,
                                   itemCount: 15,
                                   itemBuilder:
@@ -265,7 +274,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                                       children: [
                                         Container(
                                           width: 50,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             color: Color.fromRGBO(
                                                 217, 217, 217, 1),
                                             borderRadius: BorderRadius.all(
@@ -273,7 +282,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 8,
                                         ),
                                       ],
@@ -281,7 +290,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                                   },
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 25,
                               ),
                               // follow, message and share
@@ -311,14 +320,14 @@ class _TudoomProfileState extends State<TudoomProfile> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   // message button
                                   Expanded(
                                     child: OutlinedButton(
                                       style: OutlinedButton.styleFrom(
-                                        side: BorderSide(
+                                        side: const BorderSide(
                                           color: biocolor,
                                         ),
                                         primary: biocolor,
@@ -348,13 +357,13 @@ class _TudoomProfileState extends State<TudoomProfile> {
                                     ),
                                   ),
                                   // share button
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Expanded(
                                     child: OutlinedButton(
                                       style: OutlinedButton.styleFrom(
-                                        side: BorderSide(
+                                        side: const BorderSide(
                                           color: biocolor,
                                         ),
                                         primary: biocolor,
@@ -385,7 +394,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                                   )
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                             ],
@@ -411,7 +420,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
-                  tabs: [
+                  tabs: const [
                     Tab(
                       text: "Avatars",
                     ),
@@ -424,7 +433,7 @@ class _TudoomProfileState extends State<TudoomProfile> {
                   ],
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: TabBarView(
                   children: [
                     TudoomAvatarScreen(),

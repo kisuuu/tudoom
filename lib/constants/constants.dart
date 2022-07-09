@@ -19,3 +19,4 @@ const becometrader = Color.fromRGBO(0, 0, 0, 0.2);
 const becometraderdot = Color.fromRGBO(196, 196, 196, 1);
 const biocolor = Color.fromRGBO(88, 96, 116, 1);
 const circlecolor = Color.fromRGBO(245, 109, 88, 0.2);
+const availableBalance = Color.fromRGBO(57, 181, 74, 1);
